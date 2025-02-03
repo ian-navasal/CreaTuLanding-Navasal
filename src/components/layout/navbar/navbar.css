@@ -1,0 +1,9 @@
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100vw;
+	padding: 8px 0;
+	background-color: lavender;
+	border-bottom: 1px solid rgb(180, 180, 200);
+}
