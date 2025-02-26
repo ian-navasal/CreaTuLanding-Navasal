@@ -1,9 +1,7 @@
 .cardContainer {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
-}
-
-.message {
-	text-align: center;
-	margin: 2rem 0;
+	padding: 40px 0;
+	background-color: rgba(220, 220, 220, 0.185);
 }

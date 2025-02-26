@@ -1,0 +1,13 @@
+.itemDetail {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 40px;
+	padding: 40px 0;
+	background-color: rgba(220, 220, 220, 0.185);
+}
+
+.imgDetail {
+	height: 300px;
+	box-shadow: 0px 0px 4px #aaaaaa3d;
+}

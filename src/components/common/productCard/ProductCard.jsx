@@ -1,8 +1,18 @@
+import { Link } from "react-router";
 import "./productCard.css";
 
-export const ProductCard = ({ album, band, year, category, price }) => {
+export const ProductCard = ({
+	album,
+	band,
+	year,
+	category,
+	price,
+	imageURL,
+	id,
+}) => {
 	return (
 		<div className="itemCard">
+			<img src={imageURL} alt="" />
 			<h3>{band}</h3>
 			<h4>{album}</h4>
 			<div className="cardYear">
@@ -10,7 +20,7 @@ export const ProductCard = ({ album, band, year, category, price }) => {
 				<h5>{category}</h5>
 			</div>
 			<h5>${price}</h5>
-			<button>Comprar</button>
+			<Link to={`/product/${id}`}>Ver detalles</Link>
 		</div>
 	);
 };
