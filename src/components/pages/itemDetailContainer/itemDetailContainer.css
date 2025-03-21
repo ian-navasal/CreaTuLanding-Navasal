@@ -7,6 +7,10 @@
 	background-color: rgba(220, 220, 220, 0.185);
 }
 
+.cat::first-letter {
+	text-transform: capitalize;
+}
+
 .imgDetail {
 	height: 300px;
 	box-shadow: 0px 0px 4px #aaaaaa3d;

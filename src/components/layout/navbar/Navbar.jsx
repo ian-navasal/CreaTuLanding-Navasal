@@ -11,7 +11,11 @@ export const Navbar = () => {
 				<NavLink to={"/category/cassettes"}>Cassettes</NavLink>
 				<NavLink to={"/category/vinilos"}>Vinilos</NavLink>
 			</ul>
-			<CartWidget />
+			<div className="navCart">
+				<Link to={"/cart"}>
+					<CartWidget />
+				</Link>
+			</div>
 		</nav>
 	);
 };

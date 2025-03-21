@@ -11,6 +11,10 @@
 	background-color: rgba(230, 230, 250, 0.342);
 }
 
+.itemCard h5::first-letter {
+	text-transform: capitalize;
+}
+
 .cardYear {
 	display: flex;
 	width: 100%;

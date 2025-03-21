@@ -1,0 +1,23 @@
+/* .cartContainer {
+	display: grid;
+	grid-auto-rows: 50px;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 20px;
+} */
+
+/* .gridItem {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.cartCard {
+	display: flex;
+}
+*/
+
+.cartCard img {
+	height: 50px;
+	width: 50px;
+}
