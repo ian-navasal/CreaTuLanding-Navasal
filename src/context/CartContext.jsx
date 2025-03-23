@@ -1,23 +1,39 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
+	useEffect(() => {
+		const findCart = () => {
+			const localCart = localStorage.getItem("cartJSON");
+			localCart && setCart(JSON.parse(localCart));
+		};
+		findCart();
+	}, []);
+
+	useEffect(() => {
+		const setLocalCart = (array) => {
+			const cartJSON = JSON.stringify(array);
+			localStorage.setItem("cartJSON", cartJSON);
+		};
+		setLocalCart(cart);
+	}, [cart]);
+
 	const addToCart = (product) => {
-		if (cart.some((e) => e.id === product.id)) {
-			let newArray = cart.map((e) => {
-				if (e.id === product.id) {
-					return { ...e, quantity: e.quantity + product.quantity };
-				} else {
-					return e;
-				}
-			});
-			setCart(newArray);
-		} else {
-			setCart([...cart, product]);
-		}
+		// if (cart.some((e) => e.id === product.id)) {
+		// 	let newArray = cart.map((e) => {
+		// 		if (e.id === product.id) {
+		// 			return { ...e, quantity: e.quantity + product.quantity };
+		// 		} else {
+		// 			return e;
+		// 		}
+		// 	});
+		// 	setCart(newArray);
+		// } else {
+		// }
+		setCart([...cart, product]);
 	};
 
 	const getTotalAmount = () => {

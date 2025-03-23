@@ -1,15 +1,21 @@
+.counterContainer {
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+}
+
+.counterContainer h2 {
+	font-weight: 600;
+	font-size: 18px;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+}
+
 .counterContainer button {
 	height: 25px;
 	width: 25px;
 	border: 1px solid lightgrey;
-}
-
-.counterContainer {
-	display: flex;
-	gap: 10px;
-	align-items: center;
-	margin: 5px 0;
-	width: 250px;
 }
 
 .itemButton {
@@ -22,8 +28,4 @@
 
 .limitButton {
 	background-color: rgba(172, 172, 172, 0.808);
-}
-
-.removeButton {
-	margin-left: 10px;
 }

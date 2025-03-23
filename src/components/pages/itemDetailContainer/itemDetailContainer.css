@@ -1,17 +1,48 @@
 .itemDetail {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-evenly;
 	gap: 40px;
-	padding: 40px 0;
+	padding: 80px 0 100px;
 	background-color: rgba(220, 220, 220, 0.185);
+	min-height: 80vh;
 }
 
-.cat::first-letter {
-	text-transform: capitalize;
+.itemDescription {
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	width: 250px;
 }
 
 .imgDetail {
 	height: 300px;
 	box-shadow: 0px 0px 4px #aaaaaa3d;
+}
+
+.itemName {
+	font-weight: 400;
+	font-size: 22px;
+}
+
+.itemAlbum {
+	font-weight: 600;
+	margin-bottom: 10px;
+	font-size: 22px;
+}
+
+.yearFormat {
+	display: flex;
+	gap: 20px;
+}
+
+.yearFormat h4 {
+	font-weight: 300;
+	font-size: 16px;
+}
+
+.itemPrice {
+	margin: 12px 0;
+	font-weight: 600;
 }

@@ -1,20 +1,14 @@
 import { useContext, useState } from "react";
 import { toast } from "sonner";
 import { CartContext } from "../../../context/CartContext";
+import "./counter.css";
 
 export const Counter = ({ item }) => {
-	const { addToCart, cart } = useContext(CartContext);
+	const { addToCart } = useContext(CartContext);
 	const [counter, setCounter] = useState(1);
 
 	const increaseCounter = () => {
-		if (cart.some((e) => e.id === item.id)) {
-			let cartItem = cart.find((e) => e.id === item.id);
-			item.stock > cartItem.quantity + counter
-				? setCounter(counter + 1)
-				: console.log("no se puede");
-		} else {
-			setCounter(counter + 1);
-		}
+		item.stock > counter && setCounter(counter + 1);
 	};
 
 	const decreaseCounter = () => {
@@ -32,11 +26,19 @@ export const Counter = ({ item }) => {
 
 	return (
 		<div>
-			<button onClick={decreaseCounter}>-</button>
-			<h2>{counter}</h2>
-			<button onClick={increaseCounter}>+</button>
+			<div className="counterCont">
+				<button className="counterButtons" onClick={decreaseCounter}>
+					-
+				</button>
+				<h2>{counter}</h2>
+				<button className="counterButtons" onClick={increaseCounter}>
+					+
+				</button>
+			</div>
 			<div>
-				<button onClick={onAdd}>Agregar al carrito</button>
+				<button className="addButton" onClick={onAdd}>
+					Agregar al carrito
+				</button>
 			</div>
 		</div>
 	);

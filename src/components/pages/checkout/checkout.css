@@ -1,0 +1,64 @@
+.checkoutCont {
+	padding: 80px 40px 100px 40px;
+	background-color: rgba(220, 220, 220, 0.185);
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+}
+
+.checkoutForm {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 30vw;
+}
+
+.checkoutForm input {
+	padding: 4px;
+	border: 1px solid gray;
+	width: 30vw;
+	margin-top: 4px;
+}
+
+.checkoutForm p {
+	font-size: 14px;
+}
+
+.checkoutForm input:focus {
+	outline: none;
+	box-shadow: 0 0 1px 2px rgba(230, 230, 250, 0.7);
+}
+
+.checkoutForm a {
+	text-decoration: none;
+	color: black;
+	padding: 4px 20px;
+	border-radius: 4px;
+	background-color: rgba(211, 211, 211, 0.7);
+	border: 1px solid lavender;
+	align-self: center;
+	width: 100px;
+	text-align: center;
+}
+
+.checkoutForm button {
+	padding: 4px 20px;
+	border-radius: 4px;
+	background-color: rgba(211, 211, 211, 0.7);
+	border: 1px solid lavender;
+	cursor: pointer;
+	width: 100px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.formButtons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.orderSuccess {
+	text-align: center;
+	font-size: 24px;
+	font-weight: 500;
+}

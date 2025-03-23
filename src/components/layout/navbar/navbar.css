@@ -4,30 +4,56 @@ nav {
 	align-items: center;
 	width: 100vw;
 	padding: 8px 0;
-	background-color: lavender;
+	background-color: rgb(218, 215, 244);
+	height: 60px;
 }
 
 nav ul {
 	display: flex;
 	list-style: none;
-	gap: 20px;
+	gap: 30px;
 }
 
 nav a {
 	text-decoration: none;
 	color: black;
-	border-radius: 2px;
-	padding: 2px 6px;
+	border-radius: 4px;
+	padding: 4px 10px;
 }
 
 nav a.active {
-	background-color: rgb(180, 180, 201);
+	background-color: rgb(200, 191, 223);
 }
 
-nav a:hover {
-	background-color: rgb(180, 180, 201);
+.navLogo:hover {
+	transform: scale(105%);
 }
 
-.navCart a:hover {
-	background-color: lavender;
+.navLogo {
+	font-weight: 500;
+	transition: 0.2s;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 150px;
+}
+
+.navLogo img {
+	height: 30px;
+	transform: translateY(2px);
+}
+
+nav ul a:hover {
+	background-color: rgb(200, 191, 223);
+}
+
+.navCart:hover {
+	transform: scale(105%);
+}
+
+.navCart {
+	transition: 0.2s;
+	width: 150px;
+	display: flex;
+	justify-content: flex-end;
 }

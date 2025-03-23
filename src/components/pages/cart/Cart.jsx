@@ -3,6 +3,7 @@ import "./cart.css";
 import { CartContext } from "../../../context/CartContext";
 import { Link } from "react-router";
 import { CartCounter } from "../../common/cartCounter/CartCounter";
+import { RemoveCartButton } from "../../common/removeCartButton/RemoveCartButton";
 
 export const Cart = () => {
 	const { cart, getTotalAmount, emptyCart, getItemTotal } =
@@ -11,29 +12,49 @@ export const Cart = () => {
 	let total = getTotalAmount();
 
 	if (cart.length === 0) {
-		return <h2>El carrito de compras está vacío</h2>;
+		return (
+			<div className="emptyCart">
+				<h2>El carrito de compras está vacío</h2>
+				<Link to={"/"}> Ver productos </Link>
+			</div>
+		);
 	} else {
 		return (
-			<div className="cartContainer">
-				<h2>Producto</h2>
-				<h2>Cantidad</h2>
-				<h2>Precio</h2>
-				<h2>Subtotal</h2>
-				{cart.map((product) => {
-					return (
-						<div key={product.id} className="cartCard">
-							<img src={product.imageURL} alt="" />
-							<h3>{product.band}</h3>
-							<h3>{product.album}</h3>
-							<h3>${product.price}</h3>
-							<CartCounter item={product} />
-							<h3>${getItemTotal(product)}</h3>
-						</div>
-					);
-				})}
-				<h3>Total: ${total}</h3>
-				<button onClick={emptyCart}>Vaciar carrito</button>
-				<Link to={"/checkout"}>Finalizar compra</Link>
+			<div>
+				<div className="cartContainer">
+					<div className="cartTop">
+						<h2>Producto</h2>
+						<h3>Cantidad</h3>
+						<h3>Precio</h3>
+						<h3>Subtotal</h3>
+					</div>
+					{cart.map((product) => {
+						return (
+							<div key={product.id} className="cartCard">
+								<div className="cartItem">
+									<img src={product.imageURL} alt="" />
+									<h3>{product.band} </h3>
+									<h3>{product.album}</h3>
+								</div>
+								<div className="cartPrice">
+									<div className="counter">
+										<CartCounter item={product} />
+									</div>
+									<h3>${product.price}</h3>
+									<h3>${getItemTotal(product)}</h3>
+								</div>
+								<div>
+									<RemoveCartButton item={product} />
+								</div>
+							</div>
+						);
+					})}
+					<h3 className="cartTotal">Total: ${total}</h3>
+					<div className="cartCheckout">
+						<Link to={"/checkout"}>Finalizar compra</Link>
+						<button onClick={emptyCart}>Vaciar carrito</button>
+					</div>
+				</div>
 			</div>
 		);
 	}

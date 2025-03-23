@@ -1,0 +1,19 @@
+.removeButton {
+	border: 1px solid lightgrey;
+	margin-top: 15px;
+	padding: 4px 8px;
+}
+
+.removeButton:hover {
+	cursor: pointer;
+}
+
+.xButton {
+	background: none;
+	border: none;
+	font-size: 24px;
+}
+
+.xButton:hover {
+	cursor: pointer;
+}

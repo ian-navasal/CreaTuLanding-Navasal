@@ -1,1 +1,45 @@
+footer {
+	height: 160px;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: rgba(230, 230, 250, 0.541);
+	border-top: 1px groove rgba(161, 161, 196, 0.2);
+}
 
+footer img {
+	height: 70px;
+}
+
+.socialMedia {
+	display: flex;
+	gap: 20px;
+	width: 150px;
+}
+
+.socialMedia a {
+	text-decoration: none;
+	color: black;
+	font-size: 40px;
+}
+
+.socialMedia a:hover {
+	color: rgba(86, 86, 90, 0.8);
+}
+
+.footerContact {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	gap: 4px;
+}
+
+.footerContact p {
+	margin-top: 4px;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.footerContact h4 {
+	font-weight: 500;
+}

@@ -6,6 +6,7 @@ import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
 import { CartContext } from "../../../context/CartContext";
 import { CartCounter } from "../../common/cartCounter/CartCounter";
+import { RemoveCartButton } from "../../common/removeCartButton/RemoveCartButton";
 
 export const ItemDetailContainer = () => {
 	const [item, setItem] = useState({});
@@ -29,14 +30,19 @@ export const ItemDetailContainer = () => {
 	return (
 		<div className="itemDetail">
 			<img className="imgDetail" src={item.imageURL} alt="" />
-			<div>
-				<h2>{item.album}</h2>
-				<h3>{item.band}</h3>
-				<h4>Año: {item.year}</h4>
-				<h4 className="cat">{item.category}</h4>
-				<h4>${item.price}</h4>
+			<div className="itemDescription">
+				<h3 className="itemName">{item.band}</h3>
+				<h3 className="itemAlbum">{item.album}</h3>
+				<div className="yearFormat">
+					<h4>Año: {item.year}</h4>
+					<h4>Formato: {item.format}</h4>
+				</div>
+				<h4 className="itemPrice">$ {item.price}</h4>
 				{cartItem ? (
-					<CartCounter item={cartItem} total={false} />
+					<div>
+						<CartCounter item={cartItem} class={"removeButton"} />
+						<RemoveCartButton product={item} id={id} />
+					</div>
 				) : (
 					<Counter item={item} />
 				)}
